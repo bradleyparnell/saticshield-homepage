@@ -6,9 +6,12 @@ mobileMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setM
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){setMenu(false);if(modal?.open)modal.close()}});
 
 const modal=document.querySelector('.video-modal');
-document.querySelector('[data-video]')?.addEventListener('click',()=>modal.showModal());
+const film=modal?.querySelector('video');
+const openFilm=()=>{if(!modal)return;if(film&&!film.src){film.src=film.dataset.src;film.load()}modal.showModal();film?.play().catch(()=>{})};
+document.querySelectorAll('[data-video]').forEach(button=>button.addEventListener('click',openFilm));
 document.querySelector('.modal-close')?.addEventListener('click',()=>modal.close());
 modal?.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+modal?.addEventListener('close',()=>film?.pause());
 
 const tabs=[...document.querySelectorAll('.product-tabs button')];
 const cards=[...document.querySelectorAll('.product-card')];

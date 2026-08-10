@@ -77,7 +77,30 @@ footer>img{width:170px;height:auto!important;object-fit:contain}
 .data-rail{position:absolute;z-index:7;top:49%;width:18%;color:rgba(188,236,249,.62);font-size:8px;line-height:1.5;letter-spacing:.16em}.data-rail b{display:block;color:#65e9ff;font-size:9px}.data-rail i{display:block;height:1px;margin-top:8px;background:linear-gradient(90deg,#41e5ff,transparent);position:relative}.data-rail i:after{content:"";position:absolute;width:5px;height:5px;top:-2px;left:0;border-radius:50%;background:#8af3ff;box-shadow:0 0 10px #4de8ff;animation:railScan 2.8s linear infinite}.rail-left{left:8%;text-align:left}.rail-right{right:7%;text-align:right}.rail-right i{transform:scaleX(-1)}
 @keyframes productHover{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,calc(-50% - 7px))}}@keyframes auraPulse{0%,100%{transform:scale(.94);opacity:.6}50%{transform:scale(1.08);opacity:1}}@keyframes engineSpin{to{transform:rotate(360deg)}}@keyframes corePulse{0%,100%{opacity:.42}50%{opacity:1;filter:drop-shadow(0 0 12px rgba(54,229,255,.55))}}@keyframes particleFlow{from{left:0;opacity:0}15%{opacity:1}85%{opacity:1}to{left:100%;opacity:0}}@keyframes railScan{from{left:0}to{left:100%}}
 @media(max-width:760px){.hero-product{width:min(40%,210px)!important;max-height:60%!important}.power-engine{width:72%;top:57%}.data-rail{display:none}.signal-card{inset:10% 3% 7%}.telemetry{display:none}}
-@media(prefers-reduced-motion:reduce){.hero-grid,.cta-grid,.signal-card:after,.wave-bright,.signal-top b:before,.orbit,.hero-product,.pulse-ring,.manifesto-art:before{animation:none!important}.product-card:hover .product-image img{transform:none}}
+/* Featured brand film — lightweight until the visitor chooses to play */
+.film-feature{position:relative;padding:110px max(28px,calc((100vw - var(--max))/2));background:#041923;color:#fff;overflow:hidden}
+.film-feature:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 50%,rgba(0,156,220,.15),transparent 38%),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:auto,90px 100%;pointer-events:none}
+.film-shell{position:relative;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(330px,.55fr);align-items:center;gap:clamp(42px,6vw,90px)}
+.film-poster{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:1px solid rgba(112,222,239,.25);overflow:hidden;background:#06283b;cursor:pointer;box-shadow:0 32px 80px rgba(0,0,0,.34)}
+.film-poster:before{content:"";position:absolute;inset:0;z-index:3;border:1px solid rgba(255,255,255,.08);pointer-events:none}
+.film-poster img{width:100%;height:100%;object-fit:cover;filter:saturate(.7) contrast(1.1) brightness(.72);transition:transform .9s ease,filter .6s ease}
+.film-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,24,36,.52),transparent 58%),linear-gradient(0deg,rgba(2,20,30,.6),transparent 50%);z-index:1}
+.film-poster:hover img{transform:scale(1.025);filter:saturate(.9) contrast(1.08) brightness(.83)}
+.film-play{position:absolute;z-index:4;left:50%;top:50%;width:92px;height:92px;transform:translate(-50%,-50%);border:1px solid rgba(255,255,255,.8);border-radius:50%;display:grid;place-items:center;background:rgba(4,35,51,.42);backdrop-filter:blur(8px);transition:.35s ease;box-shadow:0 0 0 12px rgba(42,207,230,.08)}
+.film-play b{font-size:19px;color:#fff;padding-left:4px}
+.film-poster:hover .film-play{transform:translate(-50%,-50%) scale(1.08);background:var(--bright);border-color:var(--bright);box-shadow:0 0 0 16px rgba(42,207,230,.11),0 0 45px rgba(42,207,230,.3)}
+.film-duration{position:absolute;z-index:4;right:20px;bottom:17px;color:#fff;font:800 9px/1 Manrope,Arial;letter-spacing:.14em;background:rgba(3,27,39,.68);padding:9px 10px}
+.film-wave{position:absolute;z-index:2;left:0;right:0;top:50%;height:1px;background:rgba(88,223,240,.22);overflow:visible}
+.film-wave i{display:block;width:100%;height:45px;margin-top:-22px;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 25 C80 25 85 5 145 25 S230 45 290 25 S375 5 435 25 S520 45 580 25 S665 5 725 25 S810 45 870 25 S950 12 1000 25' fill='none' stroke='%2349dcec' stroke-width='1.2'/%3E%3C/svg%3E") center/100% 100% no-repeat;opacity:.7;filter:drop-shadow(0 0 5px #38d9ed)}
+.film-copy h2{font-size:clamp(38px,4.2vw,62px);line-height:1.04;letter-spacing:-.05em;font-weight:560;margin:24px 0 28px}
+.film-copy h2 span{color:#79dbea}
+.film-copy p{max-width:490px;color:rgba(255,255,255,.58);font-size:14px;line-height:1.85}
+.film-link{display:flex;align-items:center;justify-content:space-between;gap:55px;padding:17px 0;margin-top:25px;border:0;border-bottom:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font:800 10px/1 Manrope,Arial;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.film-link span{color:#68ddea}
+.video-frame video{display:block;width:100%;height:100%;min-height:480px;object-fit:contain;background:#02090d}
+@media(max-width:980px){.film-feature{padding-block:84px}.film-shell{grid-template-columns:1fr;gap:45px}.film-copy{max-width:690px}.film-poster{max-width:860px}}
+@media(max-width:650px){.film-feature{padding:66px 20px 72px}.film-shell{gap:34px}.film-play{width:66px;height:66px}.film-duration{right:12px;bottom:10px}.film-copy h2{font-size:clamp(37px,11vw,50px);margin:18px 0 22px}.film-copy p{font-size:13px}.film-link{width:100%}.video-frame video{min-height:220px;aspect-ratio:16/9}}
+@media(prefers-reduced-motion:reduce){.hero-grid,.cta-grid,.signal-card:after,.wave-bright,.signal-top b:before,.orbit,.hero-product,.pulse-ring,.manifesto-art:before{animation:none!important}.product-card:hover .product-image img,.film-poster:hover img{transform:none}}
 
 /* Flagship product — full-width premium stage */
 .product-card.featured{grid-column:1/-1!important;grid-template-columns:minmax(320px,.88fr) minmax(380px,1.12fr)!important;grid-template-areas:"copy image";min-height:560px;padding:0!important;background:radial-gradient(circle at 73% 48%,#0d506c 0,#07354b 27%,#052839 54%,#041e2b 100%);border:1px solid rgba(97,216,235,.13);box-shadow:0 30px 80px rgba(5,39,55,.15)}
