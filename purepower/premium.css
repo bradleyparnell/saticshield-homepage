@@ -80,6 +80,10 @@ footer>img{width:170px;height:auto!important;object-fit:contain}
 .products.is-filtered{grid-template-columns:repeat(2,minmax(300px,420px));justify-content:start}
 @media(max-width:980px){.products.is-filtered{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.size-question label{font-size:14px}.home-questions legend{font-size:12px}.choice-pair b{font-size:11px}.home-plan h3{font-size:34px}.plan-summary{margin-top:-5px}.plan-items strong{font-size:14px}.plan-items p{font-size:12.5px}.evidence-note{font-size:10.5px}.product-tabs button{min-height:45px;font-size:10px}.product-filter-feedback{display:block;margin-bottom:20px}.product-filter-feedback strong,.product-filter-feedback span{display:block}.product-filter-feedback span{margin-top:5px;line-height:1.5}.products.is-filtered{grid-template-columns:minmax(0,1fr)}}
+
+/* Keep the before/after waveform centered through the device in every browser. */
+.hero-visual .signal-card{top:calc(55% - 133px)}
+@media(max-width:650px){.hero-visual .signal-card{top:calc(55% - 117px)}}
 /* Hero clean-power engine illustration */
 .hero-visual{overflow:hidden;isolation:isolate}.hero-visual:after{content:"";position:absolute;inset:8% 4%;z-index:1;pointer-events:none;background:radial-gradient(circle at 50% 56%,rgba(38,224,255,.13),transparent 28%),linear-gradient(90deg,transparent 49.85%,rgba(108,227,255,.15) 50%,transparent 50.15%)}
 .hero-product{left:50%!important;right:auto!important;top:55%!important;z-index:6!important;width:min(46%,420px)!important;height:auto!important;max-height:68%!important;object-fit:contain!important;filter:drop-shadow(0 28px 30px rgba(0,0,0,.44)) drop-shadow(0 0 18px rgba(25,219,255,.12));animation:productHover 5s ease-in-out infinite!important}
