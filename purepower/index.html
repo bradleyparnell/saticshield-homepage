@@ -7,7 +7,7 @@
   <title>PurePower — Clean Power for Modern Life</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="mobile.css" />
-  <link rel="stylesheet" href="premium.css?v=product-cards-1" />
+  <link rel="stylesheet" href="premium.css?v=outcomes-1" />
 </head>
 <body>
   <div class="noise"></div>
@@ -118,12 +118,13 @@
           <button class="button assessment-button" type="submit">Build my home plan <span>→</span></button>
         </form>
         <aside class="home-plan" id="home-plan" aria-live="polite">
-          <div class="plan-status"><i></i> PERSONALIZED STARTING PLAN</div>
-          <h3>Measure first.<br><span>Then solve what’s there.</span></h3>
+          <div class="plan-status" id="plan-status"><i></i> YOUR RESULTS APPEAR HERE</div>
+          <h3 id="plan-title">Answer five questions.<br><span>Get a clear starting plan.</span></h3>
+          <div class="plan-summary" id="plan-summary">Your answers will create a tailored measurement, filtration and home-environment checklist.</div>
           <div class="plan-items" id="plan-items">
-            <article><b>01</b><div><strong>Start with visibility</strong><p>Use an EMI Line Monitor to establish a baseline before choosing filtration.</p></div></article>
-            <article><b>02</b><div><strong>Build room by room</strong><p>Begin with high-use rooms and sleeping areas, then expand as needed.</p></div></article>
-            <article><b>03</b><div><strong>Create distance at night</strong><p>Keep Wi-Fi equipment away from bedrooms when practical.</p></div></article>
+            <article><b>01</b><div><strong>Tell us about your home</strong><p>Choose the size and the features that affect your electrical environment.</p></div></article>
+            <article><b>02</b><div><strong>Build your home plan</strong><p>Select the blue button when your answers are ready.</p></div></article>
+            <article><b>03</b><div><strong>Get a recommended path</strong><p>We’ll show your suggested starting product and prioritized next steps here.</p></div></article>
           </div>
           <a class="plan-cta" href="#system">Explore recommended solutions <span>↓</span></a>
           <p class="evidence-note"><b>About mold:</b> moisture control and professional remediation come first. Research into electromagnetic exposure and microorganisms is still evolving; PurePower products do not treat or remediate mold.</p>
@@ -136,7 +137,8 @@
         <div><div class="section-kicker">ONE CONNECTED CLEAN-POWER SYSTEM</div><h2>From the breaker box<br>to the bulb.</h2></div>
         <p>Start where you are. Measure your environment, choose the right level of filtration, and build a whole-home approach over time.</p>
       </div>
-      <div class="product-tabs" role="tablist"><button class="active" data-filter="all">All solutions</button><button data-filter="filter">Filter</button><button data-filter="measure">Measure</button><button data-filter="shield">Shield & light</button></div>
+      <div class="product-tabs" role="tablist" aria-label="Filter PurePower solutions"><button class="active" data-filter="all" aria-selected="true">All solutions</button><button data-filter="filter" aria-selected="false">Filter</button><button data-filter="measure" aria-selected="false">Measure</button><button data-filter="shield" aria-selected="false">Shield & light</button></div>
+      <div class="product-filter-feedback" aria-live="polite"><strong id="filter-status">Showing all 5 solutions</strong><span>Choose a category to narrow the products below.</span></div>
       <div class="products">
         <article class="product-card featured reveal" data-kind="filter"><div class="product-number">01 · WHOLE HOME</div><div class="product-image"><span class="halo"></span><span class="product-orbit" aria-hidden="true"></span><img loading="lazy" decoding="async" src="assets/power-perfect-3d-v4.webp" alt="Pure Power Solar Duty dimensional product view" /></div><div class="product-copy"><div class="label">FLAGSHIP CLEAN-POWER SYSTEM</div><h3>Pure Power™<br>Solar Duty</h3><p>Solar can power your home. However, your solar system and home aren’t protected from every form of electrical noise. Pure Power Solar Duty helps protect your family, appliances and technology.</p><div class="benefit-list"><span><b>EMF elimination</b> supports a healthier home environment.</span><span><b>Power filtration</b> reduces interference, distortion and surges.</span><span><b>Whole-home protection</b> helps safeguard appliances and tech devices.</span></div><div class="product-meta" aria-label="Product highlights"><span><b>01</b> Solar ready</span><span><b>02</b> Whole-home</span><span><b>03</b> Made in USA</span></div><a href="https://www.saticusa.com/shop/GEN-III-Power-Perfect-Super-Duty-p717751875" target="_blank" rel="noopener">Explore Solar Duty <span>↗</span></a></div></article>
         <article class="product-card reveal" data-kind="filter"><div class="product-number">02 · PLUG IN</div><div class="product-image"><img loading="lazy" decoding="async" src="assets/pure-power-product.webp" alt="Pure Power Plug-In" /></div><div class="product-copy"><h3>Pure Power<br>Plug-In</h3><p>Targeted filtration that plugs into a standard 120V outlet.</p><a href="https://www.saticusa.com/shop/Satic-Pure-Power-Plug-In-p728171509" target="_blank" rel="noopener">View solution <span>↗</span></a></div></article>
@@ -169,6 +171,6 @@
   <footer><img loading="lazy" decoding="async" src="assets/purepower-logo.webp" alt="PurePower" width="1000" height="334" /><p>Engineered clean power.<br>Built in Big Sky Country.</p><div><a href="#why">Why clean power</a><a href="#system">Products</a><a href="#learn">Learning center</a><a href="https://www.saticshield.com/contact" target="_blank">Contact</a></div><small>Homepage transformation concept · Brand and product imagery © PurePower</small></footer>
 
   <dialog class="video-modal" aria-labelledby="video-title"><button class="modal-close" aria-label="Close video">×</button><div class="video-frame"><video controls playsinline preload="none" poster="https://static.wixstatic.com/media/6c68e2_b4c76b6b487c4834a1d2d22287bc7919f002.jpg" data-src="assets/clean-power-paradigm.mp4"><p>Your browser cannot play this video.</p></video></div><div class="modal-copy"><span>01:21 · PUREPOWER FILM</span><h3 id="video-title">Clean Power Paradigm</h3><p>A concise introduction to the unseen electrical environment—and PurePower’s vision for cleaner power in modern homes.</p></div></dialog>
-  <script src="script.js?v=home-fit-2"></script>
+  <script src="script.js?v=outcomes-1"></script>
 </body>
 </html>
