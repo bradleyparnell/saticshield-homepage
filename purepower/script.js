@@ -25,3 +25,29 @@ window.addEventListener('scroll',syncHeader,{passive:true});syncHeader();
 
 // If a browser cannot decode WebP or an asset is interrupted, use the included source image.
 document.querySelectorAll('img').forEach(img=>img.addEventListener('error',()=>{const fallback=img.dataset.fallback;if(fallback&&img.getAttribute('src')!==fallback){img.src=fallback;return}img.classList.add('image-error');img.parentElement?.classList.add('image-error-frame')},{once:true}));
+
+const homeFitForm=document.querySelector('#home-fit-form');
+const homeSize=document.querySelector('#home-size');
+const homeSizeOutput=document.querySelector('#home-size-output');
+const planItems=document.querySelector('#plan-items');
+const formatSize=value=>`${Number(value).toLocaleString()} sq ft`;
+const syncSize=()=>{if(homeSizeOutput&&homeSize)homeSizeOutput.textContent=formatSize(homeSize.value)};
+homeSize?.addEventListener('input',syncSize);syncSize();
+
+homeFitForm?.addEventListener('submit',event=>{
+  event.preventDefault();
+  const data=new FormData(homeFitForm);
+  const size=Number(data.get('size'));
+  const recommendations=[];
+  recommendations.push({title:'Measure your baseline',body:'Use an EMI Line Monitor before and after changes so your plan is based on what is actually present.'});
+  if(data.get('solar')==='yes')recommendations.push({title:'Evaluate whole-home solar filtration',body:'Solar inverters can add high-frequency electrical noise. Pure Power Solar Duty is the logical whole-home conversation.'});
+  else if(size>=3000)recommendations.push({title:'Plan by electrical zones',body:'For a larger home, review major panels and high-use areas before choosing whole-home or targeted filtration.'});
+  else recommendations.push({title:'Start with targeted filtration',body:'Begin in the rooms used most, then compare your monitor reading before expanding the system.'});
+  if(data.get('pool')==='yes')recommendations.push({title:'Check pool equipment',body:'Variable-speed pumps and motor controls may add line noise. Measure near the equipment and at the main panel.'});
+  if(data.get('wifi')==='yes')recommendations.push({title:'Protect the sleep environment',body:'Move the router away from bedrooms, hardwire when practical, and reduce unnecessary overnight wireless activity.'});
+  else recommendations.push({title:'Keep distance working for you',body:'Maintain separation between wireless equipment and sleeping areas, especially overnight.'});
+  if(data.get('mold')==='yes')recommendations.push({title:'Address moisture first',body:'Identify the moisture source and consult a qualified mold professional. Electrical products are not mold remediation.'});
+  planItems.innerHTML=recommendations.slice(0,5).map((item,index)=>`<article><b>${String(index+1).padStart(2,'0')}</b><div><strong>${item.title}</strong><p>${item.body}</p></div></article>`).join('');
+  document.querySelector('#home-plan')?.classList.add('is-ready');
+  document.querySelector('#home-plan')?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+});

@@ -7,19 +7,19 @@
   <title>PurePower — Clean Power for Modern Life</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="mobile.css" />
-  <link rel="stylesheet" href="premium.css?v=purepower-headline-2" />
+  <link rel="stylesheet" href="premium.css?v=home-fit-2" />
 </head>
 <body>
   <div class="noise"></div>
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="PurePower home"><img src="assets/purepower-logo.webp" alt="PurePower" width="1000" height="334" /></a>
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#why">Why clean power</a><a href="#system">The system</a><a href="#story">Our story</a><a href="#learn">Learn</a>
+      <a href="#why">Why clean power</a><a href="#home-fit">Home fit</a><a href="#system">The system</a><a href="#story">Our story</a><a href="#learn">Learn</a>
     </nav>
     <a class="nav-cta" href="#system">Find your solution <span>↗</span></a>
     <button class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span>Menu</span><i aria-hidden="true"></i></button>
   </header>
-  <div class="mobile-menu" id="mobile-menu"><a href="#why">Why clean power</a><a href="#system">The system</a><a href="#story">Our story</a><a href="#learn">Learn</a></div>
+  <div class="mobile-menu" id="mobile-menu"><a href="#why">Why clean power</a><a href="#home-fit">Home fit</a><a href="#system">The system</a><a href="#story">Our story</a><a href="#learn">Learn</a></div>
 
   <main>
     <section class="hero">
@@ -40,9 +40,8 @@
       </div>
       <div class="hero-visual reveal">
         <div class="signal-card">
-          <div class="signal-top"><span>YOUR HOME'S ELECTRICAL ENVIRONMENT</span><b>LIVE</b></div>
-          <svg class="wave" viewBox="0 0 800 180" preserveAspectRatio="none" aria-hidden="true"><path class="wave-dim" d="M0 100 C45 15 80 175 125 88 S210 20 250 104 S330 165 370 80 S450 12 495 103 S580 170 625 84 S710 20 800 96"/><path class="wave-bright" d="M0 98 C50 45 75 150 125 92 S205 44 250 100 S330 148 375 91 S455 40 500 99 S580 150 630 92 S720 46 800 96"/></svg>
-          <div class="signal-labels"><span>UNFILTERED</span><span>PURE POWER™</span></div><div class="telemetry" aria-hidden="true"><span><b>60.00</b> HZ</span><span><b>120</b> VAC</span><span><b>THD</b> ANALYSIS</span><span class="telemetry-status">SIGNAL LOCKED</span></div>
+          <svg class="wave power-story-wave" viewBox="0 0 800 180" preserveAspectRatio="none" aria-hidden="true"><path class="wave-input-ghost" d="M0 104 L28 56 L52 136 L79 34 L105 151 L132 73 L159 120 L184 42 L208 145 L235 78 L260 127 L286 50 L311 138 L338 83 L370 108"/><path class="wave-input" d="M0 104 L28 56 L52 136 L79 34 L105 151 L132 73 L159 120 L184 42 L208 145 L235 78 L260 127 L286 50 L311 138 L338 83 L370 108"/><path class="wave-output-ghost" d="M430 100 C465 42 500 42 535 100 S605 158 640 100 S710 42 745 100 S780 145 800 103"/><path class="wave-output" d="M430 100 C465 42 500 42 535 100 S605 158 640 100 S710 42 745 100 S780 145 800 103"/></svg>
+          <div class="power-story-labels"><span class="dirty-label"><i></i> Distorted input</span><span class="clean-label">Clean output <i></i></span></div>
         </div>
         <div class="power-engine" aria-hidden="true">
           <div class="engine-aura"></div><div class="engine-ring ring-a"></div><div class="engine-ring ring-b"></div>
@@ -50,10 +49,7 @@
           <div class="engine-core"><span></span></div>
         </div>
         <img class="hero-product" fetchpriority="high" decoding="async" src="assets/power-perfect-3d-v4.webp" alt="Pure Power Solar Duty whole-home clean power unit" />
-        <div class="data-rail rail-left" aria-hidden="true"><b>INPUT</b><span>HARMONIC LOAD</span><i></i></div>
-        <div class="data-rail rail-right" aria-hidden="true"><b>OUTPUT</b><span>SIGNAL STABLE</span><i></i></div>
         <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="float-tag tag-one"><span>01</span> MEASURE</div><div class="float-tag tag-two"><span>02</span> FILTER</div><div class="float-tag tag-three"><span>03</span> PROTECT</div>
       </div>
       <a class="scroll-cue" href="#why"><span>Scroll to discover</span><i>↓</i></a>
     </section>
@@ -99,6 +95,42 @@
       </div>
     </section>
 
+    <section class="home-fit" id="home-fit" aria-labelledby="home-fit-title">
+      <div class="home-fit-intro reveal">
+        <div class="section-kicker">YOUR HOME · YOUR STARTING POINT</div>
+        <h2 id="home-fit-title">What does your<br>home need?</h2>
+        <p>Answer five quick questions to build a practical starting plan for measuring, filtering and reducing unnecessary exposure.</p>
+      </div>
+      <div class="home-fit-shell reveal">
+        <form class="home-fit-form" id="home-fit-form">
+          <div class="size-question">
+            <label for="home-size"><span>01</span> Approximate home size</label>
+            <output for="home-size" id="home-size-output">2,000 sq ft</output>
+            <input id="home-size" name="size" type="range" min="500" max="8000" step="250" value="2000" />
+            <div class="range-labels"><span>500</span><span>4,000</span><span>8,000+ sq ft</span></div>
+          </div>
+          <div class="home-questions">
+            <fieldset><legend><span>02</span> Do you have solar?</legend><div class="choice-pair"><label><input type="radio" name="solar" value="yes"><b>Yes</b></label><label><input type="radio" name="solar" value="no" checked><b>No</b></label></div></fieldset>
+            <fieldset><legend><span>03</span> Pool or variable-speed pump?</legend><div class="choice-pair"><label><input type="radio" name="pool" value="yes"><b>Yes</b></label><label><input type="radio" name="pool" value="no" checked><b>No</b></label></div></fieldset>
+            <fieldset><legend><span>04</span> Mold or moisture concern?</legend><div class="choice-pair"><label><input type="radio" name="mold" value="yes"><b>Yes</b></label><label><input type="radio" name="mold" value="no" checked><b>No</b></label></div></fieldset>
+            <fieldset><legend><span>05</span> Wi-Fi near sleeping areas?</legend><div class="choice-pair"><label><input type="radio" name="wifi" value="yes"><b>Yes</b></label><label><input type="radio" name="wifi" value="no" checked><b>No</b></label></div></fieldset>
+          </div>
+          <button class="button assessment-button" type="submit">Build my home plan <span>→</span></button>
+        </form>
+        <aside class="home-plan" id="home-plan" aria-live="polite">
+          <div class="plan-status"><i></i> PERSONALIZED STARTING PLAN</div>
+          <h3>Measure first.<br><span>Then solve what’s there.</span></h3>
+          <div class="plan-items" id="plan-items">
+            <article><b>01</b><div><strong>Start with visibility</strong><p>Use an EMI Line Monitor to establish a baseline before choosing filtration.</p></div></article>
+            <article><b>02</b><div><strong>Build room by room</strong><p>Begin with high-use rooms and sleeping areas, then expand as needed.</p></div></article>
+            <article><b>03</b><div><strong>Create distance at night</strong><p>Keep Wi-Fi equipment away from bedrooms when practical.</p></div></article>
+          </div>
+          <a class="plan-cta" href="#system">Explore recommended solutions <span>↓</span></a>
+          <p class="evidence-note"><b>About mold:</b> moisture control and professional remediation come first. Research into electromagnetic exposure and microorganisms is still evolving; PurePower products do not treat or remediate mold.</p>
+        </aside>
+      </div>
+    </section>
+
     <section class="system" id="system">
       <div class="system-intro reveal">
         <div><div class="section-kicker">ONE CONNECTED CLEAN-POWER SYSTEM</div><h2>From the breaker box<br>to the bulb.</h2></div>
@@ -137,6 +169,6 @@
   <footer><img loading="lazy" decoding="async" src="assets/purepower-logo.webp" alt="PurePower" width="1000" height="334" /><p>Engineered clean power.<br>Built in Big Sky Country.</p><div><a href="#why">Why clean power</a><a href="#system">Products</a><a href="#learn">Learning center</a><a href="https://www.saticshield.com/contact" target="_blank">Contact</a></div><small>Homepage transformation concept · Brand and product imagery © PurePower</small></footer>
 
   <dialog class="video-modal" aria-labelledby="video-title"><button class="modal-close" aria-label="Close video">×</button><div class="video-frame"><video controls playsinline preload="none" poster="https://static.wixstatic.com/media/6c68e2_b4c76b6b487c4834a1d2d22287bc7919f002.jpg" data-src="assets/clean-power-paradigm.mp4"><p>Your browser cannot play this video.</p></video></div><div class="modal-copy"><span>01:21 · PUREPOWER FILM</span><h3 id="video-title">Clean Power Paradigm</h3><p>A concise introduction to the unseen electrical environment—and PurePower’s vision for cleaner power in modern homes.</p></div></dialog>
-  <script src="script.js"></script>
+  <script src="script.js?v=home-fit-2"></script>
 </body>
 </html>
